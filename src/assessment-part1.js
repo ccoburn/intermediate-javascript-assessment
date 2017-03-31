@@ -165,11 +165,11 @@ function valueType(param1, param2) {
 
 // Write a function called "promiseCatcher" with a single parameter.
 // Jasmine will pass a promise into your function through that parameter.
-// Your function will need to handle that promise.
+// Your function will need to handle that promise.  
 // When your promise receives its results, set variable 'theAnswer' (seen below) equal to the result.
 
 var theAnswer = "Unknown";
 function promiseCatcher(str) {
-  
+
 }
 // CODE HERE...
