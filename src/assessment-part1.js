@@ -43,27 +43,27 @@ function daBears(){
 // Which function(s) access the "chair" variable and get "Too Big!"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale1 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale1 = ["papaBear", "mamaBear"];
 
 // Which function(s) access the "feeling" variable and get "Hungry"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale2 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale2 = ["goldilocks"];
 
 // Which function(s) access the "porridge" variable and get "Too Cold!"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale3 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale3 = ["mamaBear"];
 
 // Which function(s) access the "sleepy" variable and get undefined
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale4 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale4 = ["daBears", "papaBear", "mamaBear", "goldilocks"];
 
 // Which function(s) access the isFurry variable and get true
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear"];
 
 
 // *************
@@ -82,8 +82,19 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // "charger" once, and invoke it twice on "mustang".
 
 // CODE HERE...
+function Vehicle() {
+  this.gasRemaining = 100
+}
 
+Vehicle.prototype.drive =function() {
+  this.gasRemaining -= 25;
+}
 
+var charger = new Vehicle();
+var mustang = new Vehicle();
+charger.drive();
+mustang.drive();
+mustang.drive();
 
 
 
@@ -103,7 +114,19 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 // Your method may be passed punctuation, numbers or other non-letter characters
 // and should neither modify them nor break when encountering them.
-
+String.prototype.grammarPolice = function() {
+  var words = this.toLowerCase().split(' ');
+  var sentence = [];
+  var comma = /[,]/gi
+  for (i=0;i<words.length;i++) {
+    var letters = words[i].split('');
+    var what = letters[0].toString().toUpperCase();
+    letters.splice(0, 1, what)
+    letters.join('');
+    sentence.push(letters);
+  }
+  return sentence.join(' ').replace(comma, "")
+}
 
 
 
@@ -126,7 +149,14 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // In all other cases, return "Different values"
 
 // CODE HERE...
-
+function valueType(param1, param2) {
+  if (param1 === param2 && typeof param1 === typeof param2) {
+    return "Exactly the same";
+  } else if (param1 == param2 && typeof param1 !== typeof param2) {
+    return "Same value, different types";
+  }
+  return "Different values"
+}
 
 
 // *************
@@ -139,5 +169,7 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // When your promise receives its results, set variable 'theAnswer' (seen below) equal to the result.
 
 var theAnswer = "Unknown";
-
+function promiseCatcher(str) {
+  
+}
 // CODE HERE...
